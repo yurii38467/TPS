@@ -1,7 +1,7 @@
 "C:\Program Files\Epic Games\UE_5.2\Engine\Build\BatchFiles\RunUAT.bat" ^
 BuildCookRun ^
--project="E:\JenkinsJobs\TPS\TPS.uproject" ^
+-project="F:\Jenkins\TPS\TPS.uproject" ^
 -platform=Win64 -clientconfig=Shipping ^
--archivedirectory="E:\JenkinsJobs\TPS\BuildFromBat" ^
--build -cook -stage -stagingdirectory="E:\JenkinsJobs\TPS\Stage" ^
+-archivedirectory="F:\Jenkins\TPS\BuildFromBat" ^
+-build -cook -stage -stagingdirectory="F:\Jenkins\TPS\Stage" ^
 -archive -pak

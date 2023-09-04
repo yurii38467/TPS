@@ -2,11 +2,10 @@
 
 #include "TPSCharacter.h"
 
-/*
+
 #if MY_VR_MACRO
 #include "HeadMountedDisplayFunctionLibrary.h"
 #endif
-*/
 
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"

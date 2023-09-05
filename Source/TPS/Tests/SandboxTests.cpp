@@ -8,16 +8,16 @@
 #include "Misc/AutomationTest.h"
 
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(FMathMaxInt, "TPSGame.Math.MaxInt",
-    EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter //
-    | EAutomationTestFlags::HighPriority);
+    EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter  //
+        | EAutomationTestFlags::HighPriority);
 
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(FMathSqrt, "TPSGame.Math.Sqrt",
-    EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter //
-    | EAutomationTestFlags::HighPriority);
+    EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter  //
+        | EAutomationTestFlags::HighPriority);
 
 IMPLEMENT_SIMPLE_AUTOMATION_TEST(FMathSin, "TPSGame.Math.Sin",
-    EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter //
-    | EAutomationTestFlags::HighPriority);
+    EAutomationTestFlags::ApplicationContextMask | EAutomationTestFlags::ProductFilter  //
+        | EAutomationTestFlags::HighPriority);
 
 using namespace TPSGame;
 
@@ -27,17 +27,8 @@ bool FMathMaxInt::RunTest(const FString& Parameters)
 
     typedef TArray<TestPayload<TInterval<int32>, int32>> MaxIntTestPayload;
 
-    const MaxIntTestPayload TestData
-    {
-        {{13, 25}, 25},
-        {{25, 25}, 25},
-        {{0, 25}, 25},
-        {{0, 0}, 0},
-        {{-25, 0}, 0},
-        {{-25, -13}, -13},
-        {{-25, -25}, -25},
-        {{-25, 25}, 25}
-    };
+    const MaxIntTestPayload TestData{
+        {{13, 25}, 25}, {{25, 25}, 25}, {{0, 25}, 25}, {{0, 0}, 0}, {{-25, 0}, 0}, {{-25, -13}, -13}, {{-25, -25}, -25}, {{-25, 25}, 25}};
 
     for (const auto Data : TestData)
     {
@@ -64,13 +55,7 @@ bool FMathSqrt::RunTest(const FString& Parameters)
 
     typedef TArray<TestPayload<float, float>> SqrtTestPayload;
 
-    const SqrtTestPayload TestData
-    {
-        {4.0f, 2.0f},
-        {3.0f, 1.7f, 0.1f},
-        {3.0f, 1.73f, 0.01f},
-        {3.0f, 1.73205f, 1.e-5f}
-    };
+    const SqrtTestPayload TestData{{4.0f, 2.0f}, {3.0f, 1.7f, 0.1f}, {3.0f, 1.73f, 0.01f}, {3.0f, 1.73205f, 1.e-5f}};
 
     for (const auto Data : TestData)
     {
@@ -95,14 +80,8 @@ bool FMathSin::RunTest(const FString& Parameters)
     typedef float Degrees;
     typedef TArray<TestPayload<Degrees, float>> SinTestPayload;
 
-    const SinTestPayload TestData
-    {
-        {Degrees{0.00f}, 0.0f},
-        {Degrees{30.0f}, 0.5f},
-        {Degrees{45.0f}, 0.707f},
-        {Degrees{60.0f}, 0.866f},
-        {Degrees{90.0f}, 1.0f}
-    };
+    const SinTestPayload TestData{
+        {Degrees{0.00f}, 0.0f}, {Degrees{30.0f}, 0.5f}, {Degrees{45.0f}, 0.707f}, {Degrees{60.0f}, 0.866f}, {Degrees{90.0f}, 1.0f}};
 
     for (const auto Data : TestData)
     {
